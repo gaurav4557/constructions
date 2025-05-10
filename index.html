@@ -1,0 +1,261 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+  <title>Gaurav's Construction Company</title> 
+  <style> 
+    * { 
+      box-sizing: border-box; 
+      scroll-behavior: smooth; 
+    } 
+ 
+    body { 
+      margin: 0; 
+      font-family: 'Segoe UI', sans-serif; 
+      background: linear-gradient(to bottom, #fdfcfb, #e2d1c3); 
+      color: #333; 
+    } 
+ 
+    header { 
+      background: linear-gradient(135deg, #f12711, #f5af19); 
+      color: white; 
+      padding: 3rem 1rem; 
+      text-align: center; 
+      animation: fadeIn 1s ease-out; 
+    } 
+ 
+    header h1 { 
+      margin: 0; 
+      font-size: 2.8rem; 
+    } 
+ 
+    nav { 
+      display: flex; 
+      justify-content: center; 
+      background: #ff6f61; 
+      padding: 1rem 0; 
+      position: sticky; 
+      top: 0; 
+      z-index: 1000; 
+    } 
+ 
+    nav a { 
+      color: white; 
+      margin: 0 1rem; 
+      text-decoration: none; 
+      font-weight: bold; 
+      transition: transform 0.3s; 
+    } 
+ 
+    nav a:hover { 
+      transform: scale(1.1); 
+      color: #ffe600; 
+    } 
+ 
+    section { 
+      padding: 3rem 1rem; 
+      max-width: 960px; 
+      margin: auto; 
+      opacity: 0; 
+      transform: translateY(30px); 
+      transition: all 0.6s ease-out; 
+    } 
+ 
+    section.visible { 
+      opacity: 1; 
+      transform: translateY(0); 
+    } 
+ 
+    h2 { 
+      text-align: center; 
+      margin-bottom: 1rem; 
+      color: #e74c3c; 
+    } 
+ 
+    ul { 
+      list-style-type: none; 
+      padding-left: 0; 
+    } 
+ 
+    ul li::before { 
+      content: ' '; 
+    } 
+ 
+    .contact-form { 
+      background: #fff; 
+      padding: 2rem; 
+      border-radius: 12px; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+    } 
+ 
+    .contact-form label { 
+      display: block; 
+      margin-bottom: 0.5rem; 
+      font-weight: bold; 
+    } 
+ 
+    .contact-form input, 
+    .contact-form textarea { 
+      width: 100%; 
+      padding: 0.8rem; 
+      margin-bottom: 1rem; 
+      border: 2px solid #ddd; 
+      border-radius: 8px; 
+      transition: border-color 0.3s; 
+    } 
+ 
+    .contact-form input:focus, 
+    .contact-form textarea:focus { 
+      border-color: #f39c12; 
+      outline: none; 
+    } 
+ 
+    .contact-form button { 
+      background: #2ecc71; 
+      color: white; 
+      padding: 0.8rem 2rem; 
+      border: none; 
+      border-radius: 6px; 
+      cursor: pointer; 
+      font-size: 1rem; 
+      transition: background 0.3s; 
+    } 
+ 
+    .contact-form button:hover { 
+      background: #27ae60; 
+    } 
+ 
+    footer { 
+      background: #34495e; 
+      color: white; 
+      text-align: center; 
+      padding: 1.2rem; 
+      margin-top: 2rem; 
+    } 
+ 
+    #backToTop { 
+      position: fixed; 
+      bottom: 30px; 
+      right: 30px; 
+      background-color: #f39c12; 
+      color: white; 
+      border: none; 
+      padding: 12px 16px; 
+      border-radius: 50%; 
+      cursor: pointer; 
+      font-size: 20px; 
+      display: none; 
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3); 
+    } 
+ 
+    @keyframes fadeIn { 
+      from { opacity: 0; transform: translateY(10px); } 
+      to { opacity: 1; transform: translateY(0); } 
+    } 
+ 
+    @media (max-width: 600px) { 
+      header h1 { 
+        font-size: 2rem; 
+      } 
+      nav { 
+        flex-direction: column; 
+      } 
+      nav a { 
+        margin: 0.5rem 0; 
+      } 
+    } 
+  </style> 
+</head> 
+<body> 
+ 
+  <header> 
+    <h1>🏗 Gaurav's Construction Company</h1> 
+    <p>Building Trust. Building Quality. </p> 
+  </header> 
+ 
+  <nav> 
+    <a href="#about"> About</a> 
+    <a href="#services">🛠 Services</a> 
+    <a href="#contact"> Contact</a> 
+  </nav> 
+ 
+  <section id="about"> 
+    <h2> About Us</h2> 
+    <p>We are a Pune-based construction company known for delivering durable 
+and aesthetic structures. From blueprint to reality, Gaurav’s Construction 
+Company ensures precision and professionalism in every project. 🏘</p> 
+  </section> 
+ 
+  <section id="services"> 
+    <h2>🛠 Our Services</h2> 
+    <ul> 
+      <li> Residential Construction</li> 
+      <li> Commercial Building Projects</li> 
+      <li> Renovation & Interior Work</li> 
+      <li> Architectural Design & Consulting</li> 
+      <li> Site Supervision & Project Management</li> 
+    </ul> 
+  </section> 
+ 
+  <section id="contact"> 
+    <h2> Contact Us</h2> 
+    <div class="contact-form"> 
+      <form onsubmit="return validateForm()" 
+action="mailto:gauravabhale01@gmail.com" method="post" 
+enctype="text/plain"> 
+        <label for="name"> Your Name</label> 
+        <input type="text" id="name" name="Name" required /> 
+ 
+        <label for="email"> Your Email</label> 
+        <input type="email" id="email" name="Email" required /> 
+ 
+        <label for="message">✍ Your Message</label> 
+        <textarea id="message" name="Message" rows="5" required></textarea> 
+ 
+        <button type="submit"> Send Message</button> 
+      </form> 
+    </div> 
+  </section> 
+ 
+  <footer> 
+    &copy; 2025 Gaurav's Construction Company. Designed with care. ❤ 
+  </footer> 
+ 
+  <button id="backToTop" onclick="scrollToTop()">⬆</button> 
+ 
+  <script> 
+    // Reveal sections on scroll 
+    const backToTop = document.getElementById('backToTop'); 
+    window.onscroll = () => { 
+      if (window.scrollY > 300) { 
+        backToTop.style.display = 'block'; 
+      } else { 
+        backToTop.style.display = 'none'; 
+      } 
+ 
+      document.querySelectorAll('section').forEach(sec => { 
+        const rect = sec.getBoundingClientRect(); 
+        if (rect.top < window.innerHeight - 100) { 
+          sec.classList.add('visible'); 
+        } 
+      }); 
+    }; 
+ 
+    function scrollToTop() { 
+      window.scrollTo({ top: 0, behavior: 'smooth' }); 
+    } 
+ 
+    function validateForm() { 
+      const email = document.getElementById('email').value; 
+      if (!email.includes('@')) { 
+        alert("Please enter a valid email address."); 
+        return false; 
+      } 
+      alert("Thanks for contacting us! We'll get back to you soon."); 
+      return true; 
+    } 
+  </script> 
+ 
+</body> 
+</html> 
